@@ -1,0 +1,788 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #202528;
+    --color-info-dark: #7d8da1;
+    --color-dark: #edeffd;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --color-dark-variant: #a3bdcc;
+    --color-background: #181a1e;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+
+    --main-color: linear-gradient(45deg, #127c64, #08ea6ab9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-image: var(--main-color);
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    item-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a {
+    color: var(--color-dark);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+p {
+    color: var(--color-dark-variant);
+}
+
+b {
+    color: var(--color-dark);
+}
+
+.text-muted {
+    color: var(--color-info-dark);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 15rem auto;
+}
+
+/* SIDEBAR LOGO STYLE */
+aside {
+    height: 100vh;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+aside .toggle .logo h2,
+aside .toggle .logo span {
+    font-size: 1.6rem;
+}
+
+aside .toggle .logo img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* SIDEBAR STYLE */
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 100vh;
+    position: relative;
+    top: 1.5rem;
+    transition: .5s;
+}
+
+aside .sidebar:hover {
+    box-shadow: none;
+}
+
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    transition: .5s;
+}
+
+aside .sidebar a ion-icon {
+    font-size: 2rem;
+    transition: .5s;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar a:hover {
+    width: 100%;
+    color: var(--color-success);
+    background-color: var(--color-light);
+    border-radius: 15px;
+}
+
+aside .sidebar a:hover {
+    color: var(--color-success);
+}
+
+aside .sidebar a:hover ion-icon {
+    color: var(--color-success);
+    margin-left: .6rem;
+}
+
+aside .sidebar .message-count {
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-dark);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/* MAIN PAGE STYLE */
+main {
+    margin-top: 1.4rem;
+}
+
+main .analyse {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+main .analyse>div {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: .5s;
+}
+
+main .analyse>div:hover {
+    box-shadow: none;
+}
+
+main .analyse>div .status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .analyse h3 {
+    font-size: 1rem;
+}
+
+main .analyse .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+main .analyse svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+main .analyse svg circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+main .analyse .sales svg circle {
+    stroke: var(--color-success);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .visits svg circle {
+    stroke: var(--color-danger);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .searches svg circle {
+    stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .progress .percentage {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+main .analyse .progress .percentage ion-icon {
+    font-size: 3rem;
+}
+
+/* MENU LIST STYLE */
+
+main .menu {
+    margin-top: 1.3rem;
+}
+
+main .menu .menu-list {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+main .menu .menu-list:hover {
+    box-shadow: none;
+}
+
+main .menu .menu-list .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .menu .menu-list .item h2 {
+    transition: .5s;
+}
+
+main .menu .menu-list .item ion-icon {
+    font-size: 5rem;
+    transition: .5s;
+}
+
+main .menu .menu-list .item:hover ion-icon,
+main .menu .menu-list .item:hover h2 {
+    color: var(--color-success);
+}
+
+main .menu .menu-list .item img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: .4rem;
+    border-radius: 50%;
+}
+
+/* RECENT ORDER STYLE */
+main .recent-orders {
+    margin-top: 1.3rem;
+}
+
+main .recent-orders h2 {
+    margin-bottom: .8rem;
+}
+
+main .recent-orders table {
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: .5s;
+}
+
+main .recent-orders table:hover {
+    box-shadow: none;
+}
+
+main table tbody tr td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td {
+    border: none;
+}
+
+main .recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+/* MENU FILTER STYLE */
+main .menu-control {
+    margin-top: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .menu-control .menu-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .menu-control .menu-filter button,
+main .menu-control .menu-manage a {
+    background-color: var(--color-white);
+    color: var(--color-info-dark);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: .5s;
+}
+
+main .menu-control .menu-manage a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+main .menu-control .menu-manage a ion-icon {
+    font-size: 1.5rem;
+}
+
+main .menu-control .menu-filter button:hover,
+main .menu-control .menu-manage a:hover {
+    box-shadow: none;
+}
+
+/* MENU ITEM LIST STYLE */
+main .menu-container {
+    margin-top: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: var(--card-border-radius);
+}
+
+main .menu-container .item {
+    display: none;
+    align-items: center;
+    grid-template-columns: 12% auto 10%;
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-info-dark);
+    height: 6rem;
+}
+
+main .menu-container .item:nth-of-type(1),
+main .menu-container .item:nth-of-type(2),
+main .menu-container .item:nth-of-type(3),
+main .menu-container .item:nth-of-type(4),
+main .menu-container .item:nth-of-type(5),
+main .menu-container .item:nth-of-type(6) {
+    display: grid;
+}
+
+main .menu-container .item .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+main .menu-container .item .image img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+main .menu-container .item .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+main .menu-container .item .content .name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+main .menu-container .item .content .name-price h1:nth-of-type(2) {
+    color: var(--color-warning);
+}
+
+main .menu-container .item .content .description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+main .menu-container .item .item-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+main .menu-container .item .item-control button,
+main .menu-container .item .item-control a,
+main .menu-container .next-previous button {
+    background-color: transparent;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+main .menu-container .item .item-control button:hover,
+main .menu-container .item .item-control a:hover,
+main .menu-container .next-previous button:hover {
+    background-color: var(--color-background);
+}
+
+main .menu-container .item .item-control button ion-icon,
+main .menu-container .item .item-control a ion-icon,
+main .menu-container .next-previous button ion-icon {
+    font-size: 1.5rem;
+    color: var(--color-info-dark);
+}
+
+main .menu-container .next-previous {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 1rem;
+}
+
+main .menu-container .next-previous .previous {
+    display: none;
+}
+
+/* ADD ITEM FORM STYLE */
+main .form-container {
+    margin-top: 1.4rem;
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: var(--card-border-radius);
+}
+
+main .form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+main .form-container form .split {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
+    width: 100%;
+}
+
+main .form-container form .split .image-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+main .form-container form .split .image-area .image {
+    width: 100%;
+    height: 30rem;
+    border: 2px solid var(--color-background);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+main .form-container form .split .image-area .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+main .form-container form .split .image-area label {
+    background-color: var(--color-success);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: .5s;
+}
+
+main .form-container form .split .image-area label:hover {
+    box-shadow: none;
+}
+
+main .form-container form .split .image-area input[type="file"] {
+    display: none;
+}
+
+main .form-container form .split .content-area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main .form-container form .split .content-area .divide {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: 1rem;
+}
+
+main .form-container form .split .content-area .divide label {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+main .form-container form .split .content-area .divide input,
+main .form-container form .split .content-area .divide select {
+    height: 3rem;
+    border-radius: var(--border-radius-1);
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    background-color: var(--color-dark);
+}
+
+main .form-container form .split .content-area .divide input:disabled {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+main .form-container form .split .content-area textarea {
+    height: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-dark);
+    resize: none;
+}
+
+main .form-container form input[type="submit"],
+main .form-container form a {
+    font-size: 1.2rem;
+    background-color: var(--color-success);
+    color: var(--color-dark);
+    padding: 1rem 2rem;
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: var(--box-shadow);
+}
+
+main .form-container form input[type="submit"]:hover,
+main .form-container form a:hover {
+    box-shadow: none;
+}
+
+/* VIEW QUESTION STYLE */
+main .question-container {
+    margin-top: 1.4rem;
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: var(--card-border-radius);
+    height: 100vh;
+}
+
+main .question-container form {
+    height: 100%;
+}
+
+main .question-container .content-area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main .question-container .content-area textarea {
+    height: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-dark);
+    resize: none;
+}
+
+main .question-container .content-area .divide {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: 1rem;
+}
+
+main .question-container .content-area .divide label {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+main .question-container .content-area .divide input,
+main .question-container .content-area .divide select {
+    height: 3rem;
+    border-radius: var(--border-radius-1);
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    background-color: var(--color-dark);
+}
+
+main .question-container .content-area .divide input:disabled,
+main .question-container .content-area textarea:disabled {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+main .question-container .content-area .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .question-container .content-area .control input {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: var(--border-radius-2);
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: var(--box-shadow);
+}
+
+main .question-container .content-area .control input:hover {
+    box-shadow: none;
+    scale: 1.05;
+}
+
+main .question-container .content-area .control input#accept {
+    background-color: var(--color-success);
+    color: var(--color-dark);
+}
+
+main .question-container .content-area .control input#decline {
+    background-color: var(--color-danger);
+    color: var(--color-dark);
+}
+
+main .question-container .content-area .divide a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-danger);
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    transition: .5s;
+    font-size: 1.2rem;
+}
+
+main .question-container .content-area .divide a:hover {
+    scale: 1.05;
+    box-shadow: none;
+}
